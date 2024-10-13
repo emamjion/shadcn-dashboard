@@ -13,11 +13,12 @@ import { Button } from "./ui/button";
 import { Nav } from "./ui/nav";
 
 const SideNavbar = () => {
+  // const onlyWidth = useWindowWidth();
+  // const mobileWidth = onlyWidth < 768;
   const [isCollapsed, setCollapsed] = useState(false);
   const toggleSidebar = () => {
     setCollapsed(!isCollapsed);
   };
-  console.log();
   return (
     <div className="relative min-w-[80px] border-r px-3 pb-10 pt-24">
       <div className="absolute right-[-20px] top-7">

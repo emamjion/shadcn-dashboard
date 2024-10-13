@@ -1,5 +1,11 @@
+import PageTitle from "@/components/PageTitle";
+
 const UsersPage = () => {
-  return <div>Users page</div>;
+  return (
+    <div>
+      <PageTitle title="Users" />
+    </div>
+  );
 };
 
 export default UsersPage;
