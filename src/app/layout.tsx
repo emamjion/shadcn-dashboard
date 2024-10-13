@@ -1,3 +1,4 @@
+import SideNavbar from "@/components/SideNavbar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -26,9 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          w-full min-h-screen bg-white text-black flex
+          ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* Sidebar */}
+        <SideNavbar />
+
+        {/* main page */}
+        <div className="p-8 w-full">{children}</div>
       </body>
     </html>
   );
