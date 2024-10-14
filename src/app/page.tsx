@@ -2,7 +2,9 @@ import Card, { CardProps } from "@/components/Card";
 import { DataChart } from "@/components/DataChart";
 import PageTitle from "@/components/PageTitle";
 import RecentSales from "@/components/RecentSales";
+import { Button } from "@/components/ui/button";
 import { ChartSpline, CreditCard, DollarSign, Users } from "lucide-react";
+import Link from "next/link";
 
 const cardData: CardProps[] = [
   {
@@ -34,7 +36,12 @@ const cardData: CardProps[] = [
 export default function Home() {
   return (
     <div>
-      <PageTitle title="Dashboard" />
+      <div className="flex justify-between">
+          <PageTitle title="Dashboard" />
+          <Link href='/login'>
+          <Button>Logout</Button>
+          </Link>
+      </div>
       <section className="flex gap-4 mt-4">
         {
           cardData.map((cd, index) => (
