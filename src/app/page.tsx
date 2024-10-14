@@ -1,5 +1,7 @@
-import { CardProps } from "@/components/Card";
+import Card, { CardProps } from "@/components/Card";
+import { DataChart } from "@/components/DataChart";
 import PageTitle from "@/components/PageTitle";
+import RecentSales from "@/components/RecentSales";
 import { ChartSpline, CreditCard, DollarSign, Users } from "lucide-react";
 
 const cardData: CardProps[] = [
@@ -33,7 +35,25 @@ export default function Home() {
   return (
     <div>
       <PageTitle title="Dashboard" />
-      Homepage
+      <section className="flex gap-4 mt-4">
+        {
+          cardData.map(cd => (
+            <Card label={cd.label} amount={cd.amount} description={cd.description} icon={cd.icon} /> 
+          ))
+        }
+      </section>
+      {/* chart and Recent sales section */}
+      <section className="mt-4 flex gap-4">
+        {/* chart */}
+        <div className="w-[60%]">
+          <DataChart/>
+        </div>
+
+        {/* Recent sales */}
+        <div className="w-[40%] p-6 rounded-xl border shadow">
+          <RecentSales/>
+        </div>
+      </section>
     </div>
   );
 }
