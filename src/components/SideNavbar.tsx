@@ -36,25 +36,25 @@ const SideNavbar = () => {
           {
             title: "Dashboard",
             icon: LayoutDashboard,
-            href: "/",
+            href: "/dashboard",
             variant: "default",
           },
           {
             title: "Users",
             icon: UsersRound,
-            href: "/users",
+            href: "/dashboard/users",
             variant: "ghost",
           },
           {
             title: "Orders",
             icon: ShoppingCart,
-            href: "/orders",
+            href: "/dashboard/orders",
             variant: "ghost",
           },
           {
             title: "Settings",
             icon: Settings,
-            href: "/settings",
+            href: "/dashboard/settings",
             variant: "ghost",
           },
         ]}
