@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
+// import { cn } from '@/lib/utils';
 import { LucideIcon } from 'lucide-react'
-import React, { HtmlHTMLAttributes } from 'react'
+import React from 'react'
 
 export type UserCardProps = {
     icon: LucideIcon;
@@ -11,7 +11,7 @@ export type UserCardProps = {
 
 const UserCard = (props: UserCardProps) => {
   return (
-    <UserCardContent>
+    // <UserCardContent></UserCardContent>
         <section className='flex items-center justify-between space-y-8'>
             {/* user part */}
             <div className='flex'>
@@ -31,19 +31,20 @@ const UserCard = (props: UserCardProps) => {
                 <h1 className='font-[600]'>{props.amount}</h1>
             </div>
         </section>              
-    </UserCardContent>
+    
   )
 }
 
 export default UserCard;
 
-
+/*
 export const UserCardContent = (props: React.HTMLAttributes<HTMLDivElement>) => {
     return (
         <div  
             {...props}
-            className={cn("w-full flex flex-col        ", props.className)}
+            className={cn("w-full flex flex-col", props.className)}
         />
             
-    )
-}
+    );
+};
+*/

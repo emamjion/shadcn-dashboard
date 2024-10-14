@@ -37,8 +37,8 @@ export default function Home() {
       <PageTitle title="Dashboard" />
       <section className="flex gap-4 mt-4">
         {
-          cardData.map(cd => (
-            <Card label={cd.label} amount={cd.amount} description={cd.description} icon={cd.icon} /> 
+          cardData.map((cd, index) => (
+            <Card key={index} label={cd.label} amount={cd.amount} description={cd.description} icon={cd.icon} /> 
           ))
         }
       </section>

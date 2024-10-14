@@ -1,5 +1,5 @@
 import React from 'react'
-import UserCard, { UserCardContent, UserCardProps } from './UserCard';
+import UserCard, { UserCardProps } from './UserCard';
 import { User } from 'lucide-react';
 
 const userCardData : UserCardProps[] = [
@@ -46,7 +46,7 @@ const RecentSales = () => {
         {/* Recent sales user card */}
         <div className='mt-8  '>
             {
-                userCardData.map(user => <UserCard icon={user.icon} name={user.name} email={user.email} amount={user.amount} />)
+                userCardData.map((user, index) => <UserCard key={index} icon={user.icon} name={user.name} email={user.email} amount={user.amount} />)
             }   
         </div>
     </div>
