@@ -9,7 +9,11 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-  		colors: {
+  		container: {
+			center: true,
+			padding: '2rem'
+		},
+		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
