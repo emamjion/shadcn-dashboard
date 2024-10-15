@@ -12,7 +12,9 @@ const SocialLogin = () => {
         })} variant='outline'>
             <FaGoogle/>
         </Button>
-        <Button variant='outline'>
+        <Button onClick={() => signIn('github', {
+          callbackUrl: 'http://localhost:3000/dashboard'
+        })} variant='outline'>
             <FaGithub/>
         </Button>
     </section>

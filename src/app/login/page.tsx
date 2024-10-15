@@ -22,11 +22,11 @@ const LoginPage = () => {
         </div>
 
         {/* login form part */}
-        <div className='w-full md:w-1/2 p-6 shadow flex flex-col items-center justify-center'>
+        <div className='w-full md:w-1/2 p-6 bg-[#F3F4F7] shadow flex flex-col items-center justify-center'>
           <h1 className='my-6 text-lg font-semibold text-gray-500'>Hirehub</h1>
           <div className='flex items-center gap-1'>
             <h1 className='text-2xl font-medium'>Hello,</h1>
-            <h1 className='text-4xl font-extrabold'>Welcome!</h1>
+            <h1 className='text-4xl font-bold'>Welcome!</h1>
           </div>
           <div className='mt-6'>
             <form className='w-[300px]'>

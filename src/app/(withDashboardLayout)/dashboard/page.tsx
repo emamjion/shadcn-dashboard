@@ -1,12 +1,17 @@
 import Card, { CardProps } from "@/components/Card";
 import { DataChart } from "@/components/DataChart";
+import Logout from "@/components/Logout";
 import PageTitle from "@/components/PageTitle";
 import RecentSales from "@/components/RecentSales";
-import { Button } from "@/components/ui/button";
 import { authOptions } from "@/utils/authOptions";
 import { ChartSpline, CreditCard, DollarSign, Users } from "lucide-react";
 import { getServerSession } from "next-auth";
-import Image from "next/image";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const cardData: CardProps[] = [
@@ -58,21 +63,21 @@ export default async function Home() {
               <span className="font-medium">Welcome!!</span>
               <h1 className="font-semibold">{session?.user?.name}</h1>
             </div>
-            
           </div>
           <div className="flex items-center gap-2">
             <div>
-              <Image
-                src={session?.user?.image as string}
-                alt="User image"
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
+              <Avatar>
+                <AvatarImage src={session?.user?.image as string} alt="User Image" />
+                <AvatarFallback>NU</AvatarFallback>
+            </Avatar>
             </div>
-            <Link href='/login'>
-            <Button>Logout</Button>
-            </Link>
+            {
+              session?.user ? <Logout/> : (
+                <Link href={'/login'}>
+                  <Button>Login</Button>
+                </Link>
+              )
+            }
           </div>
       </div>
       <section className="flex gap-4 mt-4">
