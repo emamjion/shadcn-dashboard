@@ -5,7 +5,7 @@ import { Button } from './ui/button'
 
 const Navbar = () => {
   return (
-    <header className='container mx-auto mt-6'>
+    <header className='container mx-auto my-6'>
         <nav className='flex justify-between'>
             <div>
                 <h1>logo.</h1>
