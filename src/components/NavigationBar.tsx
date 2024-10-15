@@ -7,6 +7,7 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import Link from 'next/link';
 
 const NavigationBar = () => {
   return (
@@ -18,9 +19,13 @@ const NavigationBar = () => {
             <NavigationMenuItem>
                 <NavigationMenuTrigger>About</NavigationMenuTrigger>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-                <NavigationMenuTrigger>Dashboard</NavigationMenuTrigger>
-            </NavigationMenuItem>
+            
+                <NavigationMenuItem>
+                    <Link href='/dashboard'>
+                        <NavigationMenuTrigger>Dashboard</NavigationMenuTrigger>
+                    </Link>
+                </NavigationMenuItem>
+            
             <NavigationMenuItem>
                 <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
                 <NavigationMenuContent>

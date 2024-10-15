@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Homepage = () => {
+const Homepage = async() => {
+  
   return (
     <section className='container mx-auto h-screen border'>
       <div className='flex items-center justify-center h-full'>
