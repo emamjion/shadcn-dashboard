@@ -3,7 +3,10 @@ import { DataChart } from "@/components/DataChart";
 import PageTitle from "@/components/PageTitle";
 import RecentSales from "@/components/RecentSales";
 import { Button } from "@/components/ui/button";
+import { authOptions } from "@/utils/authOptions";
 import { ChartSpline, CreditCard, DollarSign, Users } from "lucide-react";
+import { getServerSession } from "next-auth";
+import Image from "next/image";
 import Link from "next/link";
 
 const cardData: CardProps[] = [
@@ -33,14 +36,44 @@ const cardData: CardProps[] = [
   },
 ];
 
-export default function Home() {
+// type ImageProps = {
+//   user: {
+//     image ? : string | null | undefined;
+//     email ? : string | null | undefined;
+//     name ? : string | null | undefined;
+    
+//   }
+// }
+
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  console.log(session)
+  
   return (
     <div>
       <div className="flex justify-between">
-          <PageTitle title="Dashboard" />
-          <Link href='/login'>
-          <Button>Logout</Button>
-          </Link>
+          <div>
+            <PageTitle title="Dashboard" />
+            <div className="flex items-center gap-2 mt-2">
+              <span className="font-medium">Welcome!!</span>
+              <h1 className="font-semibold">{session?.user?.name}</h1>
+            </div>
+            
+          </div>
+          <div className="flex items-center gap-2">
+            <div>
+              <Image
+                src={session?.user?.image as string}
+                alt="User image"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
+            </div>
+            <Link href='/login'>
+            <Button>Logout</Button>
+            </Link>
+          </div>
       </div>
       <section className="flex gap-4 mt-4">
         {

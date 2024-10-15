@@ -1,11 +1,15 @@
+"use client";
 import React from 'react'
 import { Button } from './ui/button'
 import { FaGithub, FaGoogle } from 'react-icons/fa'
+import { signIn } from 'next-auth/react'
 
 const SocialLogin = () => {
   return (
     <section className='flex items-center justify-center gap-2'>
-        <Button variant='outline'>
+        <Button onClick={() => signIn('google', {
+          callbackUrl: 'http://localhost:3000/dashboard'
+        })} variant='outline'>
             <FaGoogle/>
         </Button>
         <Button variant='outline'>
